@@ -1,27 +1,31 @@
-# NoteMate
-This is an AI-powered academic notes management system that enables structured module-wise note-taking, intelligent PDF summarization, and personalized study support.
+NoteMate 🧠
 
-🧠 AI-Powered Module Notes & Smart Summarization System
+AI-Powered Academic Notes Management System
 
-Tagline (for CV):
+NoteMate is an AI-driven platform that enables structured module-wise note-taking, intelligent PDF summarization, and personalized study support for students.
 
-An AI-powered academic notes management system that enables structured module-wise note-taking, intelligent PDF summarization, and personalized study support.
+1️⃣ Problem Statement
 
-1️⃣ Core Problem You Are Solving (Interview-Friendly)
+Students often face challenges such as:
+Notes scattered across multiple platforms (Notion, PDFs, notebooks)
+Spending excessive time re-reading long lecture slides or PDFs
+Lack of structured, module-based summaries
+Revision content that is inefficient or unorganized
+NoteMate solves these issues by combining AI summarization, module-based organization, and intelligent study tools for faster, focused learning.
 
-Students:
 
-Store notes across multiple platforms (Notion, PDFs, notebooks)
+2️⃣ Key Features
 
-Waste time re-reading long PDFs
+Module-Based Notes Management: Create modules (e.g., CS301 – OS) with multiple notes, PDFs, and AI summaries.
+PDF Upload & Processing: Upload lecture slides, extract text, and prepare content for AI summarization.
+AI-Based Summarization: Generate concise summaries, bullet points, exam-focused notes, and key definitions.
+Smart Keyword & Concept Extraction: Extract important terms and concepts using NLP.
+Notes + Summary Integration: Link manual notes with AI-generated summaries for side-by-side review.
+Intelligent Search: Keyword and semantic search across notes, PDFs, and summaries.
+Study Mode (Optional): Generate flashcards and question-answer pairs from summaries.
 
-Lack structured, module-based summaries
 
-Don’t have revision-friendly content
-
-👉 Your system solves this using AI + organization.
-
-2️⃣ High-Level System Overview
+3️⃣ Project Architecture
 User
 ├── Modules (Subjects)
 │    ├── Written Notes
@@ -29,257 +33,37 @@ User
 │    ├── AI Summaries
 │    └── Keywords / Tags
 
-3️⃣ Key Features (Expanded & Smart)
-✅ Feature 1: Module-Based Notes Management
-What it does
+Backend (Java + Spring Boot)
+├── REST API Endpoints
+├── PDF Processing Service
+├── AI Summarization Service
+├── Keyword Extraction Service
+└── Database Layer (PostgreSQL)
 
-User creates modules (e.g., CS301 – OS)
+Frontend (React)
+├── Module Dashboard
+├── Rich Text Editor
+├── PDF Viewer
+└── Search & Study Interface
 
-Each module has:
 
-Multiple notes
+4️⃣ Tech Stack
 
-PDFs
+Backend:
 
-AI-generated summaries
+Java 21 + Spring Boot 4
+Spring Data JPA (PostgreSQL ORM)
+PostgreSQL database
+AI/ML Services (summarization, keyword extraction)
 
-Features
-
-Rich-text editor (bold, code blocks, formulas)
-
-Autosave
-
-Version history (optional)
-
-Why this matters
-
-Shows data modeling + UX design.
-
-✅ Feature 2: PDF Upload & Processing
-What it does
-
-Upload lecture slides, textbooks, research papers
-
-Extract text from PDF
-
-Tech
-
-pdfplumber / PyMuPDF
-
-Chunk large documents
-
-Output
-{
-"pdf_id": 12,
-"module": "Operating Systems",
-"pages": 120
-}
-
-✅ Feature 3: AI-Based Summarization (🔥 Core Innovation)
-Types of Summaries
-
-Short summary (revision notes)
-
-Bullet points
-
-Exam-focused summary
-
-Key definitions
-
-AI Models
-
-Transformer-based summarization
-
-Optional: LLM API (OpenAI / open-source)
-
-Prompt Example
-
-“Summarize this PDF focusing on exam-relevant concepts.”
-
-✅ Feature 4: Smart Keyword & Concept Extraction
-What it does
-
-Extract:
-
-Important terms
-
-Definitions
-
-Repeated concepts
-
-Tech
-
-spaCy NER
-
-TF-IDF
-
-KeyBERT
-
-Output
-{
-"keywords": ["Process Scheduling", "Deadlock", "Semaphore"]
-}
-
-✅ Feature 5: Notes + PDF Summary Integration (Very Impressive)
-What it does
-
-Link:
-
-Manual notes
-
-AI-generated summaries
-
-Show side-by-side view
-
-Benefits
-
-Faster revision
-
-Better concept reinforcement
-
-✅ Feature 6: Intelligent Search (CV GOLD)
-Search Capabilities
-
-Search across:
-
-Notes
-
-PDFs
-
-Summaries
-
-Semantic search (not just keywords)
-
-Example
-
-Search:
-
-“deadlock prevention”
-
-Results:
-
-Manual notes
-
-PDF summary
-
-Definitions
-
-✅ Feature 7: Study Mode (Optional but 🔥)
-Features
-
-Flashcard generation
-
-Question-answer pairs
-
-Quick revision mode
-
-AI Logic
-
-Convert summaries → questions
-
-Bloom’s taxonomy levels
-
-4️⃣ Tech Stack (Perfect Match)
-Backend
-
-Python (FastAPI)
-
-NLP: Transformers, spaCy
-
-DB: PostgreSQL
-
-File storage: Local / S3
-
-Frontend
+Frontend:
 
 React
+Rich Text Editor: Quill / TipTap
+PDF Viewer
+Module Dashboard UI
 
-Rich text editor (Quill / TipTap)
+Optional Tools:
 
-PDF viewer
-
-Dashboard UI
-
-5️⃣ Database Design (Important for Interviews)
-Tables
-users
-modules
-notes
-pdfs
-summaries
-keywords
-
-
-Example:
-
-modules(id, user_id, name, semester)
-notes(id, module_id, content, created_at)
-pdfs(id, module_id, file_path)
-summaries(id, pdf_id, type, content)
-
-6️⃣ Step-by-Step Development Guide
-🧩 Step 1: Basic CRUD
-
-User auth
-
-Module creation
-
-Note creation
-
-🧩 Step 2: PDF Upload & Storage
-
-Upload endpoint
-
-Store metadata
-
-Extract text
-
-🧩 Step 3: AI Summarization
-
-Chunk text
-
-Generate summaries
-
-Save results
-
-🧩 Step 4: Keyword Extraction
-
-Run NLP pipeline
-
-Store keywords
-
-Display tags
-
-🧩 Step 5: Search System
-
-Start with keyword search
-
-Upgrade to semantic embeddings
-
-🧩 Step 6: Frontend UX
-
-Module dashboard
-
-Split-view notes + summaries
-
-Revision mode
-
-7️⃣ How This Looks on Your CV (IMPORTANT)
-Project Title
-
-AI-Powered Academic Notes & Smart Summarization Platform
-
-Description
-
-Developed a full-stack academic notes management system using Python and React that allows students to create module-wise notes, upload PDFs, generate AI-based summaries, extract key concepts, and perform semantic search for efficient revision.
-
-Keywords
-
-AI Summarization, NLP, FastAPI, React, Semantic Search, PDF Processing
-
-8️⃣ How This Beats a Normal Notes App
-Normal Notes App	Your System
-Manual notes only	AI-generated summaries
-No structure	Module-based organization
-Keyword search	Semantic search
-Static content	Dynamic learning support
+OpenAI or custom NLP models for summarization
+Semantic search embeddings
