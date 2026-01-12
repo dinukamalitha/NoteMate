@@ -1,9 +1,6 @@
 # NoteMate
 This is an AI-powered academic notes management system that enables structured module-wise note-taking, intelligent PDF summarization, and personalized study support.
 
-# NoteMate
-This is an AI-powered academic notes management system that enables structured module-wise note-taking, intelligent PDF summarization, and personalized study support.
-
 🧠 AI-Powered Module Notes & Smart Summarization System
 
 Tagline (for CV):
