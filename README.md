@@ -1,69 +1,56 @@
-NoteMate 🧠
+# NoteMate 🧠✨
 
-AI-Powered Academic Notes Management System
+NoteMate is an AI-driven academic notes management platform designed to help students unify scattered learning materials, instantly summarize dense lecture PDFs, and generate intelligent study aids like flashcards and semantic search indexes.
 
-NoteMate is an AI-driven platform that enables structured module-wise note-taking, intelligent PDF summarization, and personalized study support for students.
+---
 
-1️⃣ Problem Statement
+## 🎯 The Problem & Solution
 
-Students often face challenges such as:
-Notes scattered across multiple platforms (Notion, PDFs, notebooks)
-Spending excessive time re-reading long lecture slides or PDFs
-Lack of structured, module-based summaries
-Revision content that is inefficient or unorganized
-NoteMate solves these issues by combining AI summarization, module-based organization, and intelligent study tools for faster, focused learning.
+Students waste hours navigating fragmented notes across Notion, local PDFs, and physical notebooks, often spending more time re-reading long lecture slides than actually studying. 
 
+**NoteMate** solves this by centralizing study materials into structured, module-based repositories and leveraging NLP to generate instant summaries, definitions, and revision tools.
 
-2️⃣ Key Features
+---
 
-Module-Based Notes Management: Create modules (e.g., CS301 – OS) with multiple notes, PDFs, and AI summaries.
-PDF Upload & Processing: Upload lecture slides, extract text, and prepare content for AI summarization.
-AI-Based Summarization: Generate concise summaries, bullet points, exam-focused notes, and key definitions.
-Smart Keyword & Concept Extraction: Extract important terms and concepts using NLP.
-Notes + Summary Integration: Link manual notes with AI-generated summaries for side-by-side review.
-Intelligent Search: Keyword and semantic search across notes, PDFs, and summaries.
-Study Mode (Optional): Generate flashcards and question-answer pairs from summaries.
+## 🚀 Key Features
 
+### 🗂️ Academic Organization
+* **Module-Based Management:** Organize study materials cleanly by course codes (e.g., *CS301 – Operating Systems*).
+* **Unified Workspace:** Link your manual rich-text notes side-by-side with uploaded lecture PDFs and AI summaries.
+* **Semantic Search:** Find exactly what you need instantly across all your notes, PDFs, and summaries using keyword and contextual search.
 
-3️⃣ Project Architecture
-User
-├── Modules (Subjects)
-│    ├── Written Notes
-│    ├── Uploaded PDFs
-│    ├── AI Summaries
-│    └── Keywords / Tags
+### 🤖 AI Study Assistant
+* **Intelligent PDF Processing:** Upload dense lecture slides or textbooks to instantly extract core text.
+* **Smart Summarization:** Generate high-impact bullet points, exam-focused cheat sheets, and key definitions.
+* **NLP Keyword Extraction:** Automatically extract critical concepts and tag them for quick filtering.
+* **Active Recall (Study Mode):** Automatically spin up interactive flashcards and Q&A pairs directly from your summary data.
 
-Backend (Java + Spring Boot)
-├── REST API Endpoints
-├── PDF Processing Service
-├── AI Summarization Service
-├── Keyword Extraction Service
-└── Database Layer (PostgreSQL)
+---
 
-Frontend (React)
-├── Module Dashboard
-├── Rich Text Editor
-├── PDF Viewer
-└── Search & Study Interface
+## 🛠️ Tech Stack
 
+### Backend
+* **Language & Framework:** Java 21 + Spring Boot 4
+* **ORM & Database:** Spring Data JPA + PostgreSQL
+* **AI & NLP Pipeline:** OpenAI API / Custom NLP Embeddings (for summaries & semantic search)
 
-4️⃣ Tech Stack
+### Frontend
+* **Core Framework:** React.js
+* **Document Handling:** TipTap / Quill (Rich Text) + React PDF Viewer
+* **Styling:** Modern, responsive UI components
 
-Backend:
+---
 
-Java 21 + Spring Boot 4
-Spring Data JPA (PostgreSQL ORM)
-PostgreSQL database
-AI/ML Services (summarization, keyword extraction)
+## 🧱 Architecture Overview
 
-Frontend:
+```text
+User Workspace
+└── Modules (e.g., CS301)
+    ├── Written Notes (Rich Text)
+    ├── Uploaded PDFs (Lecture Slides)
+    ├── AI Summaries (Bullet points / Exam Prep)
+    └── Keywords & Tags (NLP Generated)
 
-React
-Rich Text Editor: Quill / TipTap
-PDF Viewer
-Module Dashboard UI
-
-Optional Tools:
-
-OpenAI or custom NLP models for summarization
-Semantic search embeddings
+System Pipelines
+├── Frontend (React) ──> UI Dashboards, Text Editors, & PDF Rendering
+└── Backend (Spring Boot) ──> REST APIs, PDF Extraction, AI & Embedding Services, DB Layer
